@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "net.Mirik9724"
-version = "0.1"
+version = "0.1.1"
 
 repositories {
     mavenCentral()
@@ -41,7 +41,7 @@ publishing {
             url = uri("https://maven.pkg.github.com/Mirik9724/MirikAPI")
             credentials {
                 username = System.getenv("GITHUB_USERNAME") ?: "Mirik9724"
-                password = System.getenv("GITHUB_TOKEN") ?: "ghp_..." // будет подставлено из .bat
+                password = System.getenv("GITHUB_TOKEN") ?: file("github_token.txt").readLines().first().trim()
             }
         }
     }
