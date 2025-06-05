@@ -20,7 +20,7 @@ dependencies {
 }
 ~~~
 
-Grovy DSL:
+Groovy DSL:
 ~~~
 repositories {
 mavenCentral()
