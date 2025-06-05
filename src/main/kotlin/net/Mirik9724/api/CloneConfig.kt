@@ -6,7 +6,7 @@ import java.io.FileInputStream
 import java.io.InputStream
 import java.nio.file.Files
 
-object CloneConfig {
+object Config {
 
     fun cloneConfigFromJar(
         resourcePath: String,
