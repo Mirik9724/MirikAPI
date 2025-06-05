@@ -6,6 +6,8 @@ API for my same plugins and mods
 
 ### How import
 
+[JitPack site](https://jitpack.io/#Mirik9724/MirikAPI)
+
 Kotlin DSL:
 ~~~
 repositories {
@@ -16,7 +18,7 @@ repositories {
 
 ~~~
 dependencies {
-    implementation("com.github.Mirik9724:MirikAPI:0.1")
+    implementation("com.github.Mirik9724:MirikAPI:0.1.1")
 }
 ~~~
 
@@ -29,9 +31,9 @@ maven { url 'https://jitpack.io' }
 ~~~
 ~~~
 dependencies {
-implementation 'com.github.Mirik9724:MirikAPI:0.1'
+implementation 'com.github.Mirik9724:MirikAPI:0.1.1'
 }
 ~~~
 
 ### How use
-u can see it in ./examples
+u can see it in [./examples](https://github.com/Mirik9724/MirikAPI/tree/0.1.1/examples)
