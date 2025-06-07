@@ -88,7 +88,19 @@ object Config {
     }
 
     fun getData(configFile: File, key: String): String {
-        val raw = Config.loadYamlConfig(configFile)?.toString() ?: return "Not key"
-        return parseMapString(raw)[key]?.toString() ?: ""
+        val data = loadYamlConfig(configFile) ?: return "Not key"
+        val keys = key.split(".")
+        var current: Any? = data
+
+        for (k in keys) {
+            if (current is Map<*, *>) {
+                current = current[k]
+            } else {
+                return "Not key"
+            }
+        }
+        return current?.toString() ?: "Not key"
     }
+
+
 }
