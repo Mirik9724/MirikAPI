@@ -103,4 +103,11 @@ object Config {
     }
 
 
+    fun saveYamlToFile(file: File, data: Map<String, Any>) {
+        file.parentFile?.mkdirs()
+        file.writer(Charsets.UTF_8).use {
+            yaml.dump(data, it)
+        }
+    }
+
 }
