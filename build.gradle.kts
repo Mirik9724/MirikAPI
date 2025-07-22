@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "net.Mirik9724"
-version = "0.1.4.6"
+version = "0.1.4.7"
 
 repositories {
     mavenCentral()
@@ -30,4 +30,6 @@ kotlin {
 
 tasks.named<ShadowJar>("shadowJar") {
     archiveClassifier.set("") // Убирает "-all"
+    exclude("**") // сначала исключить всё
+    include("org/yaml/snakeyaml/**")
 }
