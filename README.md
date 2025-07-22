@@ -18,7 +18,7 @@ repositories {
 
 ~~~
 dependencies {
-    implementation("com.github.Mirik9724:MirikAPI:0.1.4.5")
+    implementation("com.github.Mirik9724:MirikAPI:0.1.4.6")
 }
 ~~~
 
@@ -31,9 +31,9 @@ maven { url 'https://jitpack.io' }
 ~~~
 ~~~
 dependencies {
-implementation 'com.github.Mirik9724:MirikAPI:0.1.4.5'
+implementation 'com.github.Mirik9724:MirikAPI:0.1.4.6'
 }
 ~~~
 
 ### How use
-u can see it in [./examples](https://github.com/Mirik9724/MirikAPI/tree/0.1.1/examples)
+u can see it in [./examples](https://github.com/Mirik9724/MirikAPI/tree/main/examples)

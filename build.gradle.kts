@@ -1,10 +1,12 @@
+import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
+
 plugins {
     kotlin("jvm") version "1.9.23"
     id("com.github.johnrengelman.shadow") version "7.1.2"
 }
 
 group = "net.Mirik9724"
-version = "0.1.4.5"
+version = "0.1.4.6"
 
 repositories {
     mavenCentral()
@@ -26,3 +28,6 @@ kotlin {
     jvmToolchain(17)
 }
 
+tasks.named<ShadowJar>("shadowJar") {
+    archiveClassifier.set("") // Убирает "-all"
+}
