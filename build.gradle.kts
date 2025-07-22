@@ -15,8 +15,8 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
 
-    implementation("org.slf4j:slf4j-api:2.0.13")
-    implementation("org.slf4j:slf4j-simple:2.0.13")
+    compileOnly("org.slf4j:slf4j-api:2.0.13")
+    compileOnly("org.slf4j:slf4j-simple:2.0.13")
 
     implementation("org.yaml:snakeyaml:2.2")
 }
@@ -29,7 +29,12 @@ kotlin {
 }
 
 tasks.named<ShadowJar>("shadowJar") {
-    archiveClassifier.set("") // Убирает "-all"
-    exclude("**") // сначала исключить всё
-    include("org/yaml/snakeyaml/**")
+    archiveClassifier.set("")
+
+    // Включаем только SnakeYAML
+    dependencies {
+        include(dependency("org.yaml:snakeyaml"))
+    }
 }
+
+
