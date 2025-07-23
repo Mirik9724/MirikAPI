@@ -18,5 +18,8 @@ public class Main {
 
         // Print loaded config data (usually a Map or List)
         System.out.println("Loaded config data: " + configData);
+
+        File copied = Config.copyFileFromJar("scripts/Example.ms", new File("scripts"));
+        System.out.println("File successfully copied to: " + copied.getAbsolutePath());
     }
 }

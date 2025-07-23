@@ -17,4 +17,9 @@ fun main() {
 
     // Print loaded config data (usually a Map or List)
     println("Loaded config data: $configData")
+
+    // Copies "scripts/Example.ms" from JAR into the "scripts" folder
+    val targetFile = Config.copyFileFromJar("scripts/Example.ms", File("scripts"))
+
+    println("File successfully copied to: ${targetFile.absolutePath}")
 }

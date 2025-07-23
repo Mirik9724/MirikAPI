@@ -47,6 +47,28 @@ object Config {
         }
     }
 
+    fun copyFileFromJar(
+        resourcePath: String,
+        targetDir: File,
+        newFileName: String = File(resourcePath).name
+    ): File {
+        val targetFile = File(targetDir, newFileName)
+
+        if (!targetDir.exists()) {
+            targetDir.mkdirs()
+        }
+
+        if (!targetFile.exists()) {
+            val inputStream: InputStream = object {}.javaClass.classLoader.getResourceAsStream(resourcePath)
+                ?: throw IllegalArgumentException("Resource '$resourcePath' not found in JAR")
+            Files.copy(inputStream, targetFile.toPath())
+            inputStream.close()
+        }
+
+        return targetFile
+    }
+
+
     fun mergeMaps(defaultMap: Map<String, Any>, existingMap: Map<String, Any>): Map<String, Any> {
         val result = existingMap.toMutableMap()
 
