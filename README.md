@@ -1,39 +1,10 @@
 # MirikAPI
 
-API for my same plugins and mods
-
-## Wiki
+API for convenient management of .yml files, logger.
 
 ### How import
 
 [JitPack site](https://jitpack.io/#Mirik9724/MirikAPI)
 
-Kotlin DSL:
-~~~
-repositories {
-    mavenCentral()
-    maven("https://jitpack.io")
-}
-~~~
-
-~~~
-dependencies {
-    implementation("com.github.Mirik9724:MirikAPI:0.1.4.7")
-}
-~~~
-
-Groovy DSL:
-~~~
-repositories {
-mavenCentral()
-maven { url 'https://jitpack.io' }
-}
-~~~
-~~~
-dependencies {
-implementation 'com.github.Mirik9724:MirikAPI:0.1.4.7'
-}
-~~~
-
 ### How use
-u can see it in [./examples](https://github.com/Mirik9724/MirikAPI/tree/main/examples)
+u can see it in [examples](https://github.com/Mirik9724/MirikAPI/tree/main/scr/test/kotlin)

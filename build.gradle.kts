@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "net.Mirik9724"
-version = "0.1.4.8"
+version = "0.1.5"
 
 repositories {
     mavenCentral()
@@ -17,7 +17,8 @@ dependencies {
 
     compileOnly("org.slf4j:slf4j-api:2.0.13")
     compileOnly("org.slf4j:slf4j-simple:2.0.13")
-
+    testImplementation("org.slf4j:slf4j-api:2.0.13")
+    testImplementation("org.slf4j:slf4j-simple:2.0.13")
     implementation("org.yaml:snakeyaml:2.2")
 }
 
