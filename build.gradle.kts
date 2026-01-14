@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "net.Mirik9724"
-version = "0.1.5"
+version = "0.1.5.1"
 
 repositories {
     mavenCentral()
@@ -20,6 +20,10 @@ dependencies {
     testImplementation("org.slf4j:slf4j-api:2.0.13")
     testImplementation("org.slf4j:slf4j-simple:2.0.13")
     implementation("org.yaml:snakeyaml:2.2")
+
+    implementation("org.bstats:bstats-bungeecord:3.1.0")
+    implementation("org.bstats:bstats-bukkit:3.1.0")
+    implementation("org.bstats:bstats-velocity:3.1.0")
 }
 
 tasks.test {
@@ -32,10 +36,8 @@ kotlin {
 tasks.named<ShadowJar>("shadowJar") {
     archiveClassifier.set("")
 
-    // Включаем только SnakeYAML
-    dependencies {
-        include(dependency("org.yaml:snakeyaml"))
-    }
+    mergeServiceFiles()
+    relocate("org.bstats", "net.mirik9724.api.bstats")
 }
 
 
