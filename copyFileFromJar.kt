@@ -11,17 +11,17 @@ import java.nio.file.Files
  */
 fun copyFileFromJar(
     resourcePath: String,
-    targetDir: String
+    targetDir: String,
 ){
-    val targetFile = File(targetDir, File(resourcePath).name)
+    val targetFile = java.io.File(targetDir, java.io.File(resourcePath).name)
 
     if (!targetFile.exists()) {
-        val inputStream: InputStream = object {}.javaClass.classLoader.getResourceAsStream(resourcePath)
+        val inputStream: java.io.InputStream = object {}.javaClass.classLoader.getResourceAsStream(resourcePath)
             ?: throw IllegalArgumentException("Resource '$resourcePath' not found in JAR")
-        Files.copy(inputStream, targetFile.toPath())
+        java.nio.file.Files.copy(inputStream, targetFile.toPath())
         inputStream.close()
     }
 }
 
 //Copy .kt to your work for correct work
-// (c) Mirik9724 2025-2025
+// (c) MirikAPI 2025-2025

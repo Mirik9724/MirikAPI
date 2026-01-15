@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "net.Mirik9724"
-version = "0.1.5.7"
+version = "0.1.5.8"
 
 repositories {
     mavenCentral()
