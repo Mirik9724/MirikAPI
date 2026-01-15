@@ -6,14 +6,20 @@ plugins {
 }
 
 group = "net.Mirik9724"
-version = "0.1.5.1"
+version = "0.1.5.2"
 
 repositories {
     mavenCentral()
+    maven("https://repo.aikar.co/nexus/content/groups/aikar/")
+    maven("https://repo.papermc.io/repository/maven-public/")
 }
 
 dependencies {
     testImplementation(kotlin("test"))
+
+    compileOnly("com.github.azbh111:craftbukkit-1.7.10:R")
+    compileOnly("net.md-5:bungeecord-api:1.8-SNAPSHOT")
+    compileOnly("com.velocitypowered:velocity-api:1.0.8")
 
     compileOnly("org.slf4j:slf4j-api:2.0.13")
     compileOnly("org.slf4j:slf4j-simple:2.0.13")

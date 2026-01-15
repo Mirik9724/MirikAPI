@@ -35,7 +35,13 @@ fun loadYmlFile(pathToConfig: String): Map<String, String> {
     }
 
     val yaml = Yaml()
-    val data = yaml.load<Map<String, Any>>(file.inputStream()) ?: emptyMap()
+    val dataAny = yaml.load(file.inputStream())
+    val data = if (dataAny is Map<*, *>) {
+        @Suppress("UNCHECKED_CAST")
+        dataAny as Map<String, Any>
+    } else {
+        emptyMap()
+    }
 
     return flattenMapToString(data)
 }
