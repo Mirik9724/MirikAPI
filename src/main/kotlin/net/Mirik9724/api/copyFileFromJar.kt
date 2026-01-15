@@ -20,7 +20,7 @@ fun copyFileFromJar(
     }
 
     if (!targetFile.exists()) {
-        val inputStream: InputStream = object {}.javaClass.classLoader.getResourceAsStream(resourcePath)
+        val inputStream: InputStream = clazz.getResourceAsStream(resourcePath)
             ?: throw IllegalArgumentException("Resource '$resourcePath' not found in JAR")
         Files.copy(inputStream, targetFile.toPath())
         inputStream.close()
