@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "net.Mirik9724"
-version = "0.1.5.2"
+version = "0.1.5.3"
 
 repositories {
     mavenCentral()
@@ -43,7 +43,7 @@ tasks.named<ShadowJar>("shadowJar") {
     archiveClassifier.set("")
 
     mergeServiceFiles()
-    relocate("org.bstats", "net.mirik9724.api.bstats")
+    relocate("org.bstats", "net.Mirik9724.api.bstats")
 }
 
 
