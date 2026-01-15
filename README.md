@@ -5,7 +5,7 @@ Is API plugin for Velocity & Bukkit & Bungee
 
 ### How to import
 
-[JitPack site](https://jitpack.io/#Mirik9724/MirikAPI)  
+[![](https://jitpack.io/v/Mirik9724/MirikAPI.svg)](https://jitpack.io/#Mirik9724/MirikAPI)  
 USE `compileOnly`!!!
 
 ### How use
