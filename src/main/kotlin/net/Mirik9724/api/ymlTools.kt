@@ -50,8 +50,7 @@ fun loadYmlFile(pathToConfig: String): Map<String, String> {
  * Updates a YAML file by adding missing keys and comments
  * from the new configuration text.
  *
- * ⚠️ This is a text updater, not a full-fledged YAML merger.
- * Ideal for config.yml.
+ * This is a text updater, not a full-fledged YAML merger
  */
 fun updateYml(
     newConfig: String,
@@ -104,7 +103,7 @@ fun updateYml(
 /**
  * Updates a YAML file using the reference config from the resources (JAR).
  *
- * ⚠️ resourcePath — the path INSIDE the JAR (resources)
+ * resourcePath — the path INSIDE the JAR (resources)
  */
 fun updateYmlFromJar(
     resourcePath: String,

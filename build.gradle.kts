@@ -2,11 +2,12 @@ import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 
 plugins {
     kotlin("jvm") version "1.9.23"
+    kotlin("kapt") version "1.9.23"
     id("com.github.johnrengelman.shadow") version "7.1.2"
 }
 
 group = "net.Mirik9724"
-version = "0.1.5.8"
+version = "0.1.5.9"
 
 repositories {
     mavenCentral()
@@ -20,9 +21,10 @@ dependencies {
     compileOnly("com.github.azbh111:craftbukkit-1.7.10:R")
     compileOnly("net.md-5:bungeecord-api:1.8-SNAPSHOT")
     compileOnly("com.velocitypowered:velocity-api:1.0.8")
+    kapt("com.velocitypowered:velocity-api:1.0.8")
 
-    compileOnly("org.slf4j:slf4j-api:2.0.13")
-    compileOnly("org.slf4j:slf4j-simple:2.0.13")
+    implementation("org.slf4j:slf4j-api:2.0.13")
+    implementation("org.slf4j:slf4j-simple:2.0.13")
     testImplementation("org.slf4j:slf4j-api:2.0.13")
     testImplementation("org.slf4j:slf4j-simple:2.0.13")
     implementation("org.yaml:snakeyaml:2.2")
