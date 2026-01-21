@@ -1,4 +1,4 @@
 name: MirikAPI
 main: inits.bungee
-version: Unknown
+version: ${version}
 author: Mirik9724

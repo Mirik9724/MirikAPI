@@ -1,13 +1,15 @@
 import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
+import org.jetbrains.gradle.ext.*
 
 plugins {
     kotlin("jvm") version "1.9.23"
     kotlin("kapt") version "1.9.23"
+    id("org.jetbrains.gradle.plugin.idea-ext") version "1.1.8"
     id("com.github.johnrengelman.shadow") version "7.1.2"
 }
 
 group = "net.Mirik9724"
-version = "0.1.5.9"
+version = "0.1.5.10"
 
 repositories {
     mavenCentral()
@@ -38,8 +40,34 @@ tasks.test {
     useJUnitPlatform()
 }
 kotlin {
-    jvmToolchain(17)
+    jvmToolchain(11)
 }
+
+tasks.processResources{
+    val props = mapOf("version" to version)
+    inputs.properties(props)
+    filteringCharset = "UTF-8"
+
+    filesMatching("plugin.yml") {
+        expand(props)
+    }
+    filesMatching("bungee.yml") {
+        expand(props)
+    }
+}
+
+val templateSource = file("src/main/templates")
+val templateDest = layout.buildDirectory.dir("generated/sources/templates")
+val generateTemplates = tasks.register<Copy>("generateTemplates") {
+    val props = mapOf("version" to project.version)
+    inputs.properties(props)
+
+    from(templateSource)
+    into(templateDest)
+    expand(props)
+}
+
+sourceSets.main.configure { java.srcDir(generateTemplates.map { it.outputs }) }
 
 tasks.named<ShadowJar>("shadowJar") {
     archiveClassifier.set("")

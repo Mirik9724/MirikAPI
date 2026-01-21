@@ -6,4 +6,5 @@ class bungee : Plugin(){
     override fun onEnable() {
         init()
     }
+    override fun onDisable() {}
 }

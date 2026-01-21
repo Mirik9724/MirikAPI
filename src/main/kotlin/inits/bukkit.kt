@@ -7,4 +7,6 @@ class bukkit : JavaPlugin(){
     override fun onEnable() {
         init()
     }
+
+    override fun onDisable() {}
 }
